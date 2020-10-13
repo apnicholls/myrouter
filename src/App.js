@@ -1,11 +1,9 @@
 import React from 'react';
 import './App.css';
 import Tasklist from './Tasklist';
-import Account from './Account';
-import Help from './Help';
+import About from './About';
 import Nav2 from './Nav2';
-import Contact from './contact';
-import Reservation from './form';
+import Contact from './Contact';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import { queryHelpers } from '@testing-library/react';
 
@@ -18,9 +16,8 @@ function App() {
         <Nav2 />
         <Switch>
         <Route path="/tasklist" exact component={Tasklist} />
-        {/* <Route path="/account" exact component={Account} /> */}
-        <Route path="/help" exact component={Help} />
-        <Route path="/form" exact component={Reservation} />
+        <Route path="/about" exact component={About} />
+        <Route path="/contact" exact component={Contact} />
         </Switch>
       </div>
     </BrowserRouter>

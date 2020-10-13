@@ -1,4 +1,4 @@
-import React from 'react';
+/* import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
@@ -33,7 +33,7 @@ class Contact extends React.Component {
   }
 }
 
-export default Contact;
+export default Contact; */
 
 
 

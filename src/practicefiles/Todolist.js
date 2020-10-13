@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useRef} from 'react';
 import './App.css';
-import MyForm from './MyForm'
+import MyForm from './practicefiles/MyForm'
 import MyList from './MyList'
 
 function Todolist() {
