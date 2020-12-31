@@ -5,7 +5,7 @@ import './App.css';
 export default function Nav2() {
     return (
         <div>
-            <div><h4>React Todo List App</h4></div>
+            <div><h3>React Todo List App</h3></div>
             <div className="topnav">
                 <Link style={{ textDecoration: 'none' }} to="/tasklist"><li>Tasklist</li></Link>
                 <Link style={{ textDecoration: 'none' }} to="/about"><li>About</li></Link>

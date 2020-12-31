@@ -1,6 +1,7 @@
 body {font-family: Arial, Helvetica, sans-serif;}
 * {box-sizing: border-box;}
 
+
 input[type=text], select, textarea {
   width: 100%;
   padding: 12px;
@@ -13,8 +14,8 @@ input[type=text], select, textarea {
 }
 
 input[type=submit] {
-  background-color: #4CAF50;
-  color: white;
+  background-color: #F7F2E7;
+  color: Black;
   padding: 12px 20px;
   border: none;
   border-radius: 4px;
@@ -26,8 +27,11 @@ input[type=submit]:hover {
 }
 
 .container {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
   border-radius: 5px;
-  background-color: rgb(73, 75, 71);
+  background-color: #797A7E;
   padding: 20px;
   text-align: left;
 }
@@ -40,3 +44,4 @@ label {
 }
 
 /* background-color: #f2f2f2; */
+

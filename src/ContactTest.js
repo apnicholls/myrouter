@@ -14,6 +14,7 @@ class ContactTest extends React.Component {
 
     handleOnChange = (e) => {
         this.setState({ [e.target.name]: e.target.value })
+        
     }
 
     render() {
@@ -22,7 +23,7 @@ class ContactTest extends React.Component {
             <div>
                 <h2>Contact Form</h2>
                 <div className="container">
-                    <form>
+                    <form action="https://formspree.io/f/xjvpyzwl" method="POST">
                         <label for="fname">First Name</label>
                             <input type="text" id="fname" name="firstName" placeholder="Your name.." 
                                 value={this.state.firstName} onChange={this.handleOnChange} />
