@@ -8,7 +8,7 @@ export default function Nav2() {
             <div><h3>React Todo List App</h3></div>
             <div className="topnav">
                 <Link style={{ textDecoration: 'none' }} to="/tasklist"><li>Tasklist</li></Link>
-                <Link style={{ textDecoration: 'none' }} to="/about"><li>About</li></Link>
+                <Link style={{ textDecoration: 'none' }} to="/tasks"><li>Tasks</li></Link>
                 <Link style={{ textDecoration: 'none' }} to="/contact"><li>Contact</li></Link>
             </div>
 
