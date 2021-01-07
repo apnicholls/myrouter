@@ -90,7 +90,8 @@ function Todo({ todo, index, completeTodo, removeTodo }) {
       setTodos(newTodos);
       setallTodos(newTodos);
     };
-  
+
+
    function filterToDoDone () {
       const newTodos = allTodos.filter((todoItem) => todoItem.isCompleted === true)
       setTodos(newTodos);
@@ -104,6 +105,28 @@ function Todo({ todo, index, completeTodo, removeTodo }) {
     function filterToDoAll () {
       setTodos(allTodos);
     };
+
+    function Count () {
+      const newToDos = [...todos]
+      var totalTasks = newToDos.length;
+      return (
+        <p>Total Tasks = {totalTasks} </p>
+      );
+    }
+    function CountDone () {
+      const newToDos = allTodos.filter((todoItem) => todoItem.isCompleted === true)
+      var totalTasks = newToDos.length;
+      return (
+        <p>Total Completed Tasks = {totalTasks} </p>
+      );
+    }
+    function CountPending () {
+      const newToDos = allTodos.filter((todoItem) => todoItem.isCompleted === false)
+      var totalTasks = newToDos.length;
+      return (
+        <p>Total Pending Tasks = {totalTasks} </p>
+      );
+    }
   
     return (
       <div className="app">
@@ -119,11 +142,19 @@ function Todo({ todo, index, completeTodo, removeTodo }) {
           ))}
           <TodoForm addTodo={addTodo} />
         </div>
-          <div class="btn-group" role="group" aria-label="Basic outlined example">
-              <button type="button" class="btn btn-outline-primary" onClick= {filterToDoAll}>All Tasks</button>
-              <button type="button" class="btn btn-outline-primary" onClick= {filterToDoDone}>Completed Tasks</button>
-              <button type="button" class="btn btn-outline-primary" onClick= {filterToDoPending}>Pending Tasks</button>
+          <div className="btn-group" role="group" aria-label="Basic outlined example">
+              <button type="button" className="btn btn-outline-primary" onClick= {filterToDoAll}>All Tasks</button>
+              <button type="button" className="btn btn-outline-primary" onClick= {filterToDoDone}>Completed Tasks</button>
+              <button type="button" className="btn btn-outline-primary" onClick= {filterToDoPending}>Pending Tasks</button>
           </div>
+          
+          <div>
+            <h3><Count /> </h3>
+            <h3><CountDone /> </h3>
+            <h3><CountPending /> </h3>
+
+          </div>
+
       </div>
     );
   }
