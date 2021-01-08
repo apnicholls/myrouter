@@ -1,19 +1,28 @@
 import React, { useState } from "react";
 import './Tasks.css';
 import './App.css';
+import {DatePicker, Space} from 'antd';
+import {Tooltip} from 'antd';
+import 'antd/dist/antd.css';
 
-function Todo({ todo, index, completeTodo, removeTodo }) {
+function Todo({ onChange, todo, index, completeTodo, removeTodo }) {
     return (
       <div
         className="todo"
         style={{ textDecoration: todo.isCompleted ? "line-through" : "" }}
       >
+        <div>
+          <Tooltip placement="topLeft" title="Enter Due Date">
+            <DatePicker onChange={onChange} />
+          </Tooltip>
+        </div>
         {todo.text}
   
         <div>
           <button onClick={() => completeTodo(index)}>Complete</button>
           <button onClick={() => removeTodo(index)}>x</button>
         </div>
+
       </div>
     );
   }
@@ -30,12 +39,14 @@ function Todo({ todo, index, completeTodo, removeTodo }) {
   
     return (
       <form onSubmit={handleSubmit}>
+        <Tooltip title="Enter a new task here">
         <input
           type="text"
           className="input"
           value={value}
           onChange={e => setValue(e.target.value)}
         />
+        </Tooltip>
       </form>
     );
   }
@@ -117,15 +128,23 @@ function Todo({ todo, index, completeTodo, removeTodo }) {
       const newToDos = allTodos.filter((todoItem) => todoItem.isCompleted === true)
       var totalTasks = newToDos.length;
       return (
-        <p>Total Completed Tasks = {totalTasks} </p>
+        <p>Completed Tasks = {totalTasks} </p>
       );
     }
     function CountPending () {
       const newToDos = allTodos.filter((todoItem) => todoItem.isCompleted === false)
       var totalTasks = newToDos.length;
       return (
-        <p>Total Pending Tasks = {totalTasks} </p>
+        <p>Pending Tasks = {totalTasks} </p>
       );
+    }
+    function onChange(date, dateString) {
+      return (
+        <space direction="vertical">
+        <DatePicker onChange={onChange} />
+        </space>
+      );
+
     }
   
     return (
@@ -152,7 +171,6 @@ function Todo({ todo, index, completeTodo, removeTodo }) {
             <h3><Count /> </h3>
             <h3><CountDone /> </h3>
             <h3><CountPending /> </h3>
-
           </div>
 
       </div>
