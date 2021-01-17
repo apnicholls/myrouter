@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import './Tasks.css';
-import './App.css';
-import {DatePicker, Space} from 'antd';
-import {Tooltip} from 'antd';
-import 'antd/dist/antd.css';
+import React, { useState } from "react";    // useState hook
+import './Tasks.css';                       // Created a CSS file to handle the function component vs Class
+import './App.css';                         
+import {DatePicker, Space} from 'antd';     // component form antd  (npm install 'antd')
+import {Tooltip} from 'antd';               // component form antd
+import 'antd/dist/antd.css';                // component form antd
 
 function Todo({ onChange, todo, index, completeTodo, removeTodo }) {
     return (
@@ -28,18 +28,18 @@ function Todo({ onChange, todo, index, completeTodo, removeTodo }) {
   }
   
   function TodoForm({ addTodo }) {
-    const [value, setValue] = useState("");
+    const [value, setValue] = useState("");     // sets input field "state" to blank
   
     const handleSubmit = e => {
       e.preventDefault();
       if (!value) return;
-      addTodo(value);
-      setValue("");
+      addTodo(value);       // adds input for the tod item
+      setValue("");         // resets input field to be blank
     };
   
     return (
-      <form onSubmit={handleSubmit}>
-        <Tooltip title="Enter a new task here">
+      <form onSubmit={handleSubmit}>                
+        <Tooltip title="Enter a new task here">   
         <input
           type="text"
           className="input"
@@ -102,6 +102,11 @@ function Todo({ onChange, todo, index, completeTodo, removeTodo }) {
       setallTodos(newTodos);
     };
 
+    const getCurrentDate = ()=>{
+      var cDate = new Date().getDate();
+      console.log(cDate)
+    }
+
 
    function filterToDoDone () {
       const newTodos = allTodos.filter((todoItem) => todoItem.isCompleted === true)
@@ -144,8 +149,9 @@ function Todo({ onChange, todo, index, completeTodo, removeTodo }) {
         <DatePicker onChange={onChange} />
         </space>
       );
-
     }
+
+
   
     return (
       <div className="app">
