@@ -126,21 +126,21 @@ function Todo({ onChange, todo, index, completeTodo, removeTodo }) {
       const newToDos = [...todos]
       var totalTasks = newToDos.length;
       return (
-        <p>Total Tasks = {totalTasks} </p>
+        <p>{totalTasks} </p>
       );
     }
     function CountDone () {
       const newToDos = allTodos.filter((todoItem) => todoItem.isCompleted === true)
       var totalTasks = newToDos.length;
       return (
-        <p>Completed Tasks = {totalTasks} </p>
+        <p>{totalTasks} </p>
       );
     }
     function CountPending () {
       const newToDos = allTodos.filter((todoItem) => todoItem.isCompleted === false)
       var totalTasks = newToDos.length;
       return (
-        <p>Pending Tasks = {totalTasks} </p>
+        <p>{totalTasks} </p>
       );
     }
     function onChange(date, dateString) {
@@ -150,8 +150,6 @@ function Todo({ onChange, todo, index, completeTodo, removeTodo }) {
         </space>
       );
     }
-
-
   
     return (
       <div className="app">
@@ -168,20 +166,19 @@ function Todo({ onChange, todo, index, completeTodo, removeTodo }) {
           <TodoForm addTodo={addTodo} />
         </div>
           <div className="btn-group" role="group" aria-label="Basic outlined example">
-              <button type="button" className="btn btn-outline-primary" onClick= {filterToDoAll}>All Tasks</button>
-              <button type="button" className="btn btn-outline-primary" onClick= {filterToDoDone}>Completed Tasks</button>
-              <button type="button" className="btn btn-outline-primary" onClick= {filterToDoPending}>Pending Tasks</button>
+              <button type="button" className="btn btn-outline-primary" onClick= {filterToDoAll}>All Tasks: < Count /> </button>
+              <button type="button" className="btn btn-outline-primary" onClick= {filterToDoDone}>Completed Tasks: <CountDone /></button>
+              <button type="button" className="btn btn-outline-primary" onClick= {filterToDoPending}>Pending Tasks: <CountPending /></button>
           </div>
-          
-          <div>
-            <h3><Count /> </h3>
-            <h3><CountDone /> </h3>
-            <h3><CountPending /> </h3>
-          </div>
-
+         
       </div>
     );
   }
   
   export default Tasks;
   
+/*   <div className="Totals" >
+  <h5><Count /> </h5>
+  <h5><CountDone /> </h5>
+  <h5><CountPending /> </h5>
+</div> */

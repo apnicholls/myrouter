@@ -26,14 +26,23 @@
   }
   
   div.btn-group {
-    margin: 0 auto;
+    /* margin: 0 auto; */
+    margin: 5px;
     text-align: center; 
     width: inherit;
     display: inline-block
   }
-  
+
   .input {
     width: 60%;
   }
+
+/*   .Totals {
+    display: block;
+    padding:10px;
+    margin: 15px;
+    border:10px;
+    border-top: 15px;
+  } */
   
   
