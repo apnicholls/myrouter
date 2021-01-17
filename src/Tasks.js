@@ -1,18 +1,18 @@
 import React, { useState } from "react";    // useState hook
 import './Tasks.css';                       // Created a CSS file to handle the function component vs Class
 import './App.css';                         
-import {DatePicker, Space} from 'antd';     // component form antd  (npm install 'antd')
-import {Tooltip} from 'antd';               // component form antd
-import 'antd/dist/antd.css';                // component form antd
+import {DatePicker, Space} from 'antd';     // component from antd  (npm install 'antd')
+import {Tooltip} from 'antd';               // component from antd
+import 'antd/dist/antd.css';                // component from antd
 
 function Todo({ onChange, todo, index, completeTodo, removeTodo }) {
     return (
       <div
         className="todo"
-        style={{ textDecoration: todo.isCompleted ? "line-through" : "" }}
+        style={{ textDecoration: todo.isCompleted ? "line-through" : "" }}  // If to do item iscompleted this puts a line through the text and the date //
       >
-        <div>
-          <Tooltip placement="topLeft" title="Enter Due Date">
+        <div> 
+          <Tooltip placement="topLeft" title="Enter Due Date">  
             <DatePicker onChange={onChange} />
           </Tooltip>
         </div>
