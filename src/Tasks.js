@@ -33,7 +33,7 @@ function Todo({ onChange, todo, index, completeTodo, removeTodo }) {
     const handleSubmit = e => {
       e.preventDefault();
       if (!value) return;
-      addTodo(value);       // adds input for the tod item
+      addTodo(value);       // adds input for the todo item
       setValue("");         // resets input field to be blank
     };
   
